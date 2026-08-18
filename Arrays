@@ -1,0 +1,57 @@
+<?php
+
+// indexed arrays
+
+$peopleOne = ["wan", "harith", "dam"];
+//$peopleOne[1];
+
+$peopleTwo = array('hana', 'dyna');
+//echo $peopleTwo[1];
+
+$ages = array(20, 30, 40, 50);
+//print_r($ages);
+
+$ages[1] = 25;
+//print_r($ages);
+
+$ages[] = 60;
+//print_r($ages);
+
+array_push($ages, 70);
+//print_r($ages);
+
+//echo count($ages);
+
+$peopleThree = array_merge($peopleOne, $peopleTwo);
+//print_r($peopleThree);
+
+// associative arrays (key-value pairs)
+
+$wanOne = ['Kai' => 'black', 'Dam' => 'white', 'Adib' => 'blue'];
+//echo $harithOne['Dam'];
+print_r($harithOne);
+
+$wanTwo = array('Kai' => 20, 'Dam' => 30, 'Adib' => 40);
+//echo $harithTwo['Adib'];
+
+//echo count($harithOne);
+
+$wanThree = array_merge($harithOne, $harithTwo);
+print_r($harithThree);
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PHP Tutorials</title>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
