@@ -1,0 +1,138 @@
+#3 - PHP
+
+<?php: Tells the server to start interpreting code as PHP
+
+echo: Outputs text or HTML directly to the browser
+
+Every statement must end with a semicolon ;
+
+#4 - Variables & Constants
+
+Declaring Variables
+Variables store temporary data like strings, numbers, or booleans. All variable names must begin with a dollar sign $.
+
+Variable names must start with a letter or an underscore _ (no number).
+
+Variable names are case-sensitive ($age and $AGE are two separate variables).
+
+Text values (strings) are wrapped in single '...' or double "..." quotes.
+
+Variables ($name): Can change value - ideal for user input, loop counters, and temporary data.
+
+Creating Constants
+Constant names are written in ALL_CAPS by convention.
+
+Do not use a dollar sign $ when defining or referencing a constant.
+
+Constants (NAME): Immutable - ideal for site-wide settings, configuration parameters, or database keys.
+
+#5 - Strings
+
+Single Quotes (' '): Treat text literally. Variables inside single quotes are not evaluated.
+
+Double Quotes (" "): Support variable interpolation, automatically expanding variable values directly inside the string.
+
+(// Outputs: Hello Yoshi)
+A backslash (\) escapes quotes or special characters so they do not break the PHP string syntax.
+
+#6 - Numbers
+
++ (Addition)
+- (Subtraction)
+* (Multiplication)
+/ (Division)
+** (Power / Exponent)
+% (Modulo / Remainder)
+
+Built-in Math Functions
+PHP includes pre-packaged functions to perform common calculations or round decimal numbers.
+
+#7 - Arrays
+
+Arrays allow you to store multiple related values inside a single variable, structured either as indexed arrays (ordered by numbers) or associative arrays (ordered by key-value pairs).
+
+// Adding new items to the end
+  $people[] = 'luigi';
+  array_push($people, 'toad');
+
+Associative Arrays
+Store data using named string keys instead of numeric indexes to pair keys with values.
+
+#8 - Multidimensional Arrays
+
+Multidimensional arrays are "arrays inside arrays," allowing you to group complex, structured data sets
+
+$blogs = [
+    ['title' => 'mario party', 'author' => 'mario', 'likes' => 30],
+  ];
+
+Accessing Nested Data
+Chain multiple square brackets [][] together to reach inside nested arrays. The first index selects the array position, and the second targets the internal key or index.
+
+// Accesses the 'author' of the second blog post
+  echo $blogs[1]['author']; // Outputs: toad
+
+Adding and Manipulating Nested Arrays
+You can push new arrays onto your multidimensional array or remove elements using built-in array functions.
+
+#9 - Loops
+
+Loops allow you to run the same block of code repeatedly
+
+for ($i = 0; $i < count($blogs); $i++) {
+      echo $blogs[$i] . '<br>';
+  }
+
+The for Loop
+Executes code a predetermined number of times using an initializer, a continuation condition, and an incrementor.
+
+$i = 0;
+  while ($i < count($blogs)) {
+      echo $blogs[$i] . '<br>';
+      $i++; // Increment counter to prevent an infinite loop
+  }
+
+The while Loop
+Executes code repeatedly as long as the specified condition remains true.
+
+$blogs = [
+      ['title' => 'mario party', 'author' => 'mario'],
+      ['title' => 'mario kart', 'author' => 'toad']
+  ];
+
+  // Iterating over array elements
+  foreach ($blogs as $blog) {
+      echo $blog['title'] . ' - ' . $blog['author'] . '<br>';
+  }
+
+The foreach Loop
+The standard method for working with arrays in PHP. It automatically cycles through each element in an array without requiring manual index tracking.
+
+#10 - Booleans & Comparisons
+
+Boolean Output Behavior
+In PHP, booleans hold either true or false. When outputting a boolean directly using echo, true renders as 1, whereas false renders as an empty string.
+
+echo true;  // Outputs: 1
+  echo false; // Outputs: (nothing)
+
+Comparison Operators
+Comparison operators evaluate two numbers or strings and return a boolean result.
+
+echo 5 < 10;   // Outputs: 1 (true)
+  echo 5 > 10;   // Outputs: (false)
+  echo 5 <= 5;   // Outputs: 1 (true)
+  echo 10 != 5;  // Outputs: 1 (true)
+
+Loose vs. Strict Equality
+PHP offers two ways to test equality depending on whether you want to check only the value or both the value and data type.
+
+Loose Equality (== or !=): Compares values, automatically converting data types if necessary.
+
+Strict Equality (=== or !==): Compares both value and data type.
+
+// Loose: checks value only
+  echo 5 == '5';   // Outputs: 1 (true)
+
+  // Strict: checks value AND type (integer vs string)
+  echo 5 === '5';  // Outputs: (false)
